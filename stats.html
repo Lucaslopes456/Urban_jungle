@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UrbanJungle Helper - Estatísticas do jardim, ofensiva de rega e nível do jardineiro.">
+  <title>UrbanJungle Helper | Jardim e Estatísticas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="page-stats" class="app-body">
+  <header id="main-header" class="site-header">
+    <div id="brand-container" class="header-brand">
+      <h1 id="site-title" class="brand-title">UrbanJungle Helper</h1>
+      <p id="site-tagline" class="brand-tagline">Seu assistente diário de jardinagem urbana</p>
+    </div>
+
+    <nav id="main-nav" class="site-nav" aria-label="Navegação Principal">
+      <ul id="nav-list" class="nav-list">
+        <li class="nav-item"><a id="nav-dashboard" class="nav-link" href="index.html">Dashboard</a></li>
+        <li class="nav-item"><a id="nav-collection" class="nav-link" href="collection.html">Minhas Plantas</a></li>
+        <li class="nav-item"><a id="nav-add-plant" class="nav-link" href="add-plant.html">Nova Planta</a></li>
+        <li class="nav-item"><a id="nav-plant-details" class="nav-link" href="plant-details.html">Perfil da Planta</a></li>
+        <li class="nav-item"><a id="nav-schedule" class="nav-link" href="schedule.html">Cronograma</a></li>
+        <li class="nav-item"><a id="nav-tasks" class="nav-link" href="tasks.html">Tarefas</a></li>
+        <li class="nav-item"><a id="nav-catalog" class="nav-link" href="catalog.html">Enciclopédia</a></li>
+        <li class="nav-item"><a id="nav-settings" class="nav-link" href="settings.html">Configurações</a></li>
+        <li class="nav-item"><a id="nav-stats" class="nav-link active" href="stats.html" aria-current="page">Jardim</a></li>
+        <li class="nav-item"><a id="nav-about" class="nav-link" href="about.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="stats-main" class="site-main">
+    <section id="gardener-level-section" class="stats-section" aria-labelledby="gardener-level-heading">
+      <header class="section-header">
+        <h2 id="gardener-level-heading" class="section-title">Nível do Jardineiro e Progresso</h2>
+      </header>
+
+      <article id="gardener-rank-card" class="rank-card">
+        <div class="rank-info">
+          <p class="rank-label">Título Atual:</p>
+          <h3 id="gardener-rank-title" class="rank-title">Guardião de Brotos (Nível 4)</h3>
+          <p id="gardener-xp-text" class="rank-xp-summary">
+            Experiência acumulada: <output id="gardener-xp-current">340</output> / <span id="gardener-xp-next">500 XP</span>
+          </p>
+          <progress id="gardener-xp-progress" class="xp-progress-bar" value="340" max="500">68%</progress>
+        </div>
+        <div class="rank-actions">
+          <button id="btn-open-ranks-dialog" class="btn btn-secondary" type="button">Ver Tabela de Níveis</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="garden-metrics-section" class="stats-section" aria-labelledby="garden-metrics-heading">
+      <h2 id="garden-metrics-heading" class="section-title">Indicadores da Sua Selva Urbana</h2>
+
+      <div id="stats-kpi-grid" class="metrics-grid">
+        <article id="stat-alive-plants" class="metric-card">
+          <h3 class="metric-title">Plantas Vivas</h3>
+          <output id="stat-alive-value" class="metric-value">12</output>
+          <p class="metric-description">Vasos ativos sob seus cuidados</p>
+        </article>
+
+        <article id="stat-watering-streak" class="metric-card">
+          <h3 class="metric-title">Ofensiva de Rega Atual</h3>
+          <output id="stat-streak-value" class="metric-value">14 dias</output>
+          <p class="metric-description">Recorde pessoal: <span id="stat-best-streak">21 dias</span></p>
+        </article>
+
+        <article id="stat-total-waterings" class="metric-card">
+          <h3 class="metric-title">Total de Regas Realizadas</h3>
+          <output id="stat-waterings-value" class="metric-value">86</output>
+          <p class="metric-description">Desde o início do seu jardim</p>
+        </article>
+
+        <article id="stat-health-rate" class="metric-card">
+          <h3 class="metric-title">Índice de Pontualidade</h3>
+          <meter id="stat-punctuality-meter" class="punctuality-meter" min="0" max="100" low="50" high="85" optimum="100" value="92">92%</meter>
+          <output id="stat-punctuality-value" class="metric-value">92%</output>
+          <p class="metric-description">Regas feitas dentro do prazo</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="achievements-section" class="stats-section" aria-labelledby="achievements-heading">
+      <h2 id="achievements-heading" class="section-title">Conquistas Desbloqueadas</h2>
+
+      <ul id="achievements-list" class="badges-grid">
+        <li id="badge-first-plant" class="achievement-card unlocked" data-badge="first-seed">
+          <strong class="achievement-title">Primeira Muda</strong>
+          <p class="achievement-desc">Cadastrou a primeira planta na coleção.</p>
+        </li>
+        <li id="badge-streak-7" class="achievement-card unlocked" data-badge="streak-7">
+          <strong class="achievement-title">Semana Verde</strong>
+          <p class="achievement-desc">Manteve 7 dias seguidos de ofensiva de rega.</p>
+        </li>
+        <li id="badge-jungle-10" class="achievement-card locked" data-badge="jungle-10">
+          <strong class="achievement-title">Colecionador Botânico</strong>
+          <p class="achievement-desc">Mantenha 10 espécies diferentes simultaneamente.</p>
+        </li>
+      </ul>
+    </section>
+
+    <dialog id="gardener-ranks-dialog" class="app-dialog" aria-labelledby="ranks-dialog-title">
+      <form id="gardener-ranks-form" class="dialog-form" method="dialog">
+        <header class="dialog-header">
+          <h3 id="ranks-dialog-title" class="dialog-title">Progressão de Níveis do Jardineiro</h3>
+        </header>
+        <div class="dialog-body">
+          <ol id="ranks-progression-list" class="ranks-list">
+            <li><strong>Nível 1 (0 XP):</strong> Aprendiz de Terra</li>
+            <li><strong>Nível 2 (100 XP):</strong> Regador Dedicado</li>
+            <li><strong>Nível 3 (250 XP):</strong> Cultivador Urbano</li>
+            <li><strong>Nível 4 (500 XP):</strong> Guardião de Brotos</li>
+            <li><strong>Nível 5 (1000 XP):</strong> Mestre da Selva Urbana</li>
+          </ol>
+        </div>
+        <footer class="dialog-footer">
+          <button id="btn-close-ranks-dialog" class="btn btn-primary" type="submit" value="close">Entendi</button>
+        </footer>
+      </form>
+    </dialog>
+  </main>
+
+  <footer id="main-footer" class="site-footer">
+    <p id="footer-copy" class="footer-text">&copy; 2026 UrbanJungle Helper. Cultive com cuidado.</p>
+  </footer>
+</body>
+</html>
+
